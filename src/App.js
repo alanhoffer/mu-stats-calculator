@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { STATS_CONSTANT, RESET_POINTS, LEVEL_POINTS } from './constants';
 
+
 function App() {
 
   const [stats, setStats] = useState({ str: 0, agi: 0, vit: 0, ene: 0, total: 0 });
@@ -23,8 +24,6 @@ function App() {
     final_stats.agi = (total_points * STATS_CONSTANT[clase].agi) / 50000;
     final_stats.vit = (total_points * STATS_CONSTANT[clase].vit) / 50000;
     final_stats.ene = (total_points * STATS_CONSTANT[clase].ene) / 50000;
-    final_stats.total = (total_points * STATS_CONSTANT[clase].total) / 50000;
-
     setStats(final_stats)
 
   }, [clase, level, resets])
@@ -33,10 +32,11 @@ function App() {
     <div className="App">
       <div className='stats-container'>
 
-        <p> STR: {stats.str} </p>
-        <p> AGI: {stats.agi} </p>
-        <p> VIT: {stats.vit} </p>
-        <p> ENE: {stats.ene} </p>
+        <p> STR: {Math.round(stats.str)} </p>
+        <p> AGI: {Math.round(stats.agi)} </p>
+        <p> VIT: {Math.round(stats.vit)} </p>
+        <p> ENE: {Math.round(stats.ene)} </p>
+        <p> CMD: {Math.round(stats.ene)} </p>
         <p> TUS PUNTOS: {stats.total} </p>
 
         <div className='stats-form'>
