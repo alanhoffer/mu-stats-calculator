@@ -68,8 +68,8 @@ function App() {
             onChange={e => setClase(e.target.value)}
           >
             <option value="bk">BLADE KNIGHT</option>
-            <option value="elf_agi">ELF_AGI</option>
-            <option value="elf_ene">ELF_ENE</option>
+            <option value="elf_agi">ELF AGILIDAD</option>
+            <option value="elf_ene">ELF ENERGIA</option>
             <option value="sum">SUM</option>
             <option value="mg_caballero">MG FUERZA</option>
             <option value="mg_mago">MG MAGO</option>
