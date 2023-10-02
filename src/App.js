@@ -33,10 +33,10 @@ function App() {
     <div className="App">
       <div className='stats-container'>
 
-        <p> STR: {stats.str-0.1} </p>
-        <p> AGI: {stats.agi-0.1} </p>
-        <p> VIT: {stats.vit-0.1} </p>
-        <p> ENE: {stats.ene-0.1} </p>
+        <p> STR: {stats.str} </p>
+        <p> AGI: {stats.agi} </p>
+        <p> VIT: {stats.vit} </p>
+        <p> ENE: {stats.ene} </p>
         <p> TUS PUNTOS: {stats.total} </p>
 
         <div className='stats-form'>
