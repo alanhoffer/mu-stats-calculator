@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://wallpapercave.com/wp/wp2445543.jpg');
 }
 
 .App-logo {
@@ -28,10 +33,22 @@
   color: #61dafb;
 }
 
+.stats-container{
+  background-color: rgba(0, 0, 0, 0.452);
+  padding: 50px 100px;
+  color:white;
+}
+
+.stats-form{
+  display:flex;
+  flex-direction: column;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
