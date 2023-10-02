@@ -15,7 +15,12 @@ function App() {
   useEffect(() => {
 
     let RESET_POINTS = 820;
-    let LEVEL_POINTS = clase.startsWith('mg') ? 7 : 5;
+    let LEVEL_POINTS = 5;
+
+    if(clase.startsWith('mg') || clase.startsWith('rf')){
+      LEVEL_POINTS = 7;
+    }
+
     console.log(LEVEL_POINTS, clase)
 
     let final_stats = { str: 0, agi: 0, vit: 0, ene: 0, total: 0 };
@@ -66,9 +71,12 @@ function App() {
             <option value="elf_agi">ELF_AGI</option>
             <option value="elf_ene">ELF_ENE</option>
             <option value="sum">SUM</option>
-            <option value="mg_caballero">MG_CABALLERO</option>
-            <option value="mg_mago">MG_MAGO</option>
-            <option value="mg_balanced">MG_BALANCED</option>
+            <option value="mg_caballero">MG FUERZA</option>
+            <option value="mg_mago">MG MAGO</option>
+            <option value="mg_balanced">MG BALANCEADO</option>
+            <option value="rf_str">RF FUERZA</option>
+            <option value="rf_ene">RF ENERGIA</option>
+            <option value="rf_vit">RF VIDA</option>
             <option value="sm">WIZARD</option>
           </select>
         </div>
