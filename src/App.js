@@ -15,12 +15,21 @@ function App() {
 
     let final_stats = { str: 0, agi: 0, vit: 0, ene: 0, cmd: 0 };
     let total_points = points;
+    let sobrante = 0;
 
-    final_stats.str = (total_points * STATS_CONSTANT[clase].str) / STATS_CONSTANT[clase].total;
-    final_stats.agi = (total_points * STATS_CONSTANT[clase].agi) / STATS_CONSTANT[clase].total;
-    final_stats.vit = (total_points * STATS_CONSTANT[clase].vit) / STATS_CONSTANT[clase].total;
-    final_stats.ene = (total_points * STATS_CONSTANT[clase].ene) / STATS_CONSTANT[clase].total;
-    final_stats.cmd = (total_points * STATS_CONSTANT[clase].cmd) / STATS_CONSTANT[clase].total;
+    final_stats.str = Math.round((total_points * STATS_CONSTANT[clase].str) / STATS_CONSTANT[clase].total);
+    final_stats.agi = Math.round((total_points * STATS_CONSTANT[clase].agi) / STATS_CONSTANT[clase].total);
+    final_stats.vit = Math.round((total_points * STATS_CONSTANT[clase].vit) / STATS_CONSTANT[clase].total);
+    final_stats.ene = Math.round((total_points * STATS_CONSTANT[clase].ene) / STATS_CONSTANT[clase].total);
+    
+    if(clase == 'rf'){
+      final_stats.cmd = Math.round((total_points * STATS_CONSTANT[clase].cmd) / STATS_CONSTANT[clase].total);
+    }
+
+    sobrante = (final_stats.str + final_stats.agi + final_stats.vit + final_stats.ene + final_stats.cmd) - total_points;
+    
+    console.log(sobrante, (final_stats.str + final_stats.agi + final_stats.vit + final_stats.ene + final_stats.cmd))
+
     setStats(final_stats)
 
   }, [clase, points])
