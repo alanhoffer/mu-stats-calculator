@@ -24,6 +24,7 @@ function App() {
     final_stats.agi = (total_points * STATS_CONSTANT[clase].agi) / 50000;
     final_stats.vit = (total_points * STATS_CONSTANT[clase].vit) / 50000;
     final_stats.ene = (total_points * STATS_CONSTANT[clase].ene) / 50000;
+    final_stats.total = total_points;
     setStats(final_stats)
 
   }, [clase, level, resets])
