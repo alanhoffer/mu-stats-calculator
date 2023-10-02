@@ -32,11 +32,11 @@ function App() {
     <div className="App">
       <div className='stats-container'>
 
-        <p> STR: {Math.round(stats.str)} </p>
-        <p> AGI: {Math.round(stats.agi)} </p>
-        <p> VIT: {Math.round(stats.vit)} </p>
-        <p> ENE: {Math.round(stats.ene)} </p>
-        <p> CMD: {Math.round(stats.ene)} </p>
+        <p> STR: {Math.round(stats.str-0.1)} </p>
+        <p> AGI: {Math.round(stats.agi-0.1)} </p>
+        <p> VIT: {Math.round(stats.vit-0.1)} </p>
+        <p> ENE: {Math.round(stats.ene-0.1)} </p>
+        <p> CMD: {Math.round(stats.ene-0.1)} </p>
         <p> TUS PUNTOS: {stats.total} </p>
 
         <div className='stats-form'>
