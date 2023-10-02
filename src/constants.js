@@ -10,7 +10,4 @@ let STATS_CONSTANT = {
   sm: { str: 1000, agi: 20000, vit: 4000, ene: 25000, total: 50000 },
 };
 
-let RESET_POINTS = 820;
-let LEVEL_POINTS = 5;
-
-export {STATS_CONSTANT, RESET_POINTS, LEVEL_POINTS }
+export {STATS_CONSTANT}

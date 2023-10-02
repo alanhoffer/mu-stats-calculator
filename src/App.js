@@ -11,6 +11,11 @@ function App() {
   const [level, setLevel] = useState(0);
 
   useEffect(() => {
+
+    let RESET_POINTS = 820;
+    let LEVEL_POINTS = clase.startsWith('mg') ? 7 : 5;
+    console.log(LEVEL_POINTS, clase)
+
     let final_stats = { str: 0, agi: 0, vit: 0, ene: 0, total: 0 };
     let total_points = level * LEVEL_POINTS + resets * RESET_POINTS;
 
