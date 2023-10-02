@@ -34,12 +34,24 @@
 }
 
 .stats-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.452);
   padding: 50px 100px;
   color:white;
 }
 
+.stats-container img {
+  width: 100px;
+}
+
+.stats-container p {
+  width: 100%;
+}
+
 .stats-form{
+  width: 100%;
   display:flex;
   flex-direction: column;
 }

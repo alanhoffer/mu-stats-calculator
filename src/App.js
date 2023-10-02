@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { STATS_CONSTANT, RESET_POINTS, LEVEL_POINTS } from './constants';
+import Logo from './img/descarga.png'
 
 
 function App() {
@@ -31,8 +32,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className='stats-container'>
 
+      <div className='stats-container'>
+        <img src={Logo} />
+        <h2>REPARTILOS SAMA</h2>
         <p> STR: {stats.str} </p>
         <p> AGI: {stats.agi} </p>
         <p> VIT: {stats.vit} </p>
