@@ -60,6 +60,10 @@ p{
   flex-direction: column;
 }
 
+.stats-form input, select{
+  padding:5px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,39 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-import { STATS_CONSTANT, RESET_POINTS, LEVEL_POINTS } from './constants';
+import { STATS_CONSTANT } from './constants';
 import Logo from './img/descarga.png'
 
 
 function App() {
 
-  const [stats, setStats] = useState({ str: 0, agi: 0, vit: 0, ene: 0, total: 0 });
+  const [stats, setStats] = useState({ str: 0, agi: 0, vit: 0, ene: 0, cmd: 0 });
   const [clase, setClase] = useState('bk')
-  const [resets, setResets] = useState(0);
-  const [level, setLevel] = useState(0);
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
 
-    let RESET_POINTS = 820;
-    let LEVEL_POINTS = 5;
 
-    if(clase.startsWith('mg') || clase.startsWith('rf')){
-      LEVEL_POINTS = 7;
-    }
+    let final_stats = { str: 0, agi: 0, vit: 0, ene: 0, cmd: 0 };
+    let total_points = points;
 
-    console.log(LEVEL_POINTS, clase)
-
-    let final_stats = { str: 0, agi: 0, vit: 0, ene: 0, total: 0 };
-    let total_points = (level * LEVEL_POINTS) + (resets * RESET_POINTS);
-
-    final_stats.str = (total_points * STATS_CONSTANT[clase].str) / 50000;
-    final_stats.agi = (total_points * STATS_CONSTANT[clase].agi) / 50000;
-    final_stats.vit = (total_points * STATS_CONSTANT[clase].vit) / 50000;
-    final_stats.ene = (total_points * STATS_CONSTANT[clase].ene) / 50000;
-    final_stats.total = total_points;
+    final_stats.str = (total_points * STATS_CONSTANT[clase].str) / STATS_CONSTANT[clase].total;
+    final_stats.agi = (total_points * STATS_CONSTANT[clase].agi) / STATS_CONSTANT[clase].total;
+    final_stats.vit = (total_points * STATS_CONSTANT[clase].vit) / STATS_CONSTANT[clase].total;
+    final_stats.ene = (total_points * STATS_CONSTANT[clase].ene) / STATS_CONSTANT[clase].total;
+    final_stats.cmd = (total_points * STATS_CONSTANT[clase].cmd) / STATS_CONSTANT[clase].total;
     setStats(final_stats)
 
-  }, [clase, level, resets])
+  }, [clase, points])
 
   return (
     <div className="App">
@@ -45,22 +35,15 @@ function App() {
         <p> AGI: {stats.agi} </p>
         <p> VIT: {stats.vit} </p>
         <p> ENE: {stats.ene} </p>
-        <p> TUS PUNTOS: {stats.total} </p>
+        {clase === 'dl' ? <p> CMD: {stats.cmd} </p> : null}
 
         <div className='stats-form'>
-          <p>Level</p>
+          <p>Points</p>
           <input
             id="name"
             type="text"
-            value={level}
-            onChange={(e) => setLevel(e.target.value)}
-          />
-          <p>Reset</p>
-          <input
-            id="name"
-            type="text"
-            value={resets}
-            onChange={(e) => setResets(e.target.value)}
+            value={points}
+            onChange={(e) => setPoints(e.target.value)}
           />
           <p>Clase</p>
           <select

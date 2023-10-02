@@ -53,7 +53,8 @@ let STATS_CONSTANT = {
     agi: 15000,
     vit: 5000,
     ene: 20000,
-    total: 50000
+    cmd: 32000,
+    total: 62000
   },
   mg_caballero: {
     str: 23000,
