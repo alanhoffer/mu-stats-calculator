@@ -18,7 +18,7 @@ function App() {
     console.log(LEVEL_POINTS, clase)
 
     let final_stats = { str: 0, agi: 0, vit: 0, ene: 0, total: 0 };
-    let total_points = level * LEVEL_POINTS + resets * RESET_POINTS;
+    let total_points = (level * LEVEL_POINTS) + (resets * RESET_POINTS);
 
     final_stats.str = (total_points * STATS_CONSTANT[clase].str) / 50000;
     final_stats.agi = (total_points * STATS_CONSTANT[clase].agi) / 50000;
@@ -33,10 +33,10 @@ function App() {
     <div className="App">
       <div className='stats-container'>
 
-        <p> STR: {Math.round(stats.str-0.1)} </p>
-        <p> AGI: {Math.round(stats.agi-0.1)} </p>
-        <p> VIT: {Math.round(stats.vit-0.1)} </p>
-        <p> ENE: {Math.round(stats.ene-0.1)} </p>
+        <p> STR: {stats.str-0.1} </p>
+        <p> AGI: {stats.agi-0.1} </p>
+        <p> VIT: {stats.vit-0.1} </p>
+        <p> ENE: {stats.ene-0.1} </p>
         <p> TUS PUNTOS: {stats.total} </p>
 
         <div className='stats-form'>
